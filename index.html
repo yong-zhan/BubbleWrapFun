@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>模拟泡泡纸</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="favicon.ico" />
+</head>
+<body>
+<header>
+  <h1>模拟泡泡纸</h1>
+  <div>
+    <button class="btn" id="resetBtn">重置泡泡纸</button>
+    <button class="btn" id="popRandomBtn">随机捏</button>
+    <button class="btn" id="resetStyleBtn">重置样式</button>
+  </div>
+</header>
+
+<main>
+  <div class="panel">
+    <div style="margin-bottom:0.5rem;">声音</div>
+    <label class="switch">
+      <input type="checkbox" id="soundToggle" checked>
+      <span class="slider"></span>
+    </label>
+
+    <div style="margin-top:0.5rem;">音效选择</div>
+    <div>
+      <button class="audio-btn selected" data-type="1">啪声1</button>
+      <button class="audio-btn" data-type="2">啪声2</button>
+      <button class="audio-btn" data-type="3">啪声3</button>
+    </div>
+
+    <div style="margin-top:0.5rem;">自定义泡泡贴图</div>
+    <input type="file" id="uploadImg" accept="image/*">
+  </div>
+
+  <div>
+    <div class="bubble-grid" id="bubbleGrid"></div>
+    <div style="margin-top:0.5rem; font-size:0.75rem; color:#6b7280" id="counter"></div>
+  </div>
+</main>
+
+<!-- 裁剪弹窗 -->
+<div id="cropModal">
+  <div style="display:flex; flex-direction:column; align-items:center;">
+    <canvas id="cropCanvas" width="300" height="300"></canvas>
+    <div id="cropControls">
+      <button class="btn" id="cropConfirm">确认裁剪</button>
+      <button class="btn" id="cropCancel">取消</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"> 
+	  <div class="version">版本号 1.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  制作: 雍霑(*･ω< ) 2025&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  关于我：<a href="https://github.com/yong-zhan" target="_blank">GitHub</div>
+</footer>
+
+</body>
+<script type="text/javascript" src="./script.js"></script>
+</html>
